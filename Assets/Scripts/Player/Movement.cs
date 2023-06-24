@@ -1,21 +1,31 @@
+using System;
+using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace Player
 {
     public class Movement : MonoBehaviour
     {
+        public bool activeDebug;
+        
         Rigidbody2D _rb;
         Animator _animator;
 
         Vector2 _movementInput;
+        
         [SerializeField]
         float maxSpeed = 3f, acceleration = 8f, slowdown = 10f;
+
+        float _initialMaxSpeed;
         float _currentSpeed;
 
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+
+            _initialMaxSpeed = maxSpeed;
         }
 
         private void FixedUpdate()
@@ -29,6 +39,11 @@ namespace Player
 
             _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, maxSpeed);
             _rb.velocity = _movementInput * _currentSpeed;
+
+            if (activeDebug)
+            {
+                Debug.Log(_movementInput);
+            }
         }
 
         public void ReceiveInput(Vector2 movementInput)
@@ -51,6 +66,24 @@ namespace Player
             {
                 _animator.SetBool("isMoving", false);
             }
+        }
+
+        public void ResetVelocity()
+        {
+            _movementInput.x = 0f;
+            _movementInput.y = 0f;
+            _rb.velocity = new Vector2();
+            _animator.SetBool("isMoving", false);
+        }
+
+        public void MultiplyMaxSpeed(float value)
+        {
+            maxSpeed *= value;
+        }
+
+        public void ResetMaxSpeed()
+        {
+            maxSpeed = _initialMaxSpeed;
         }
     }
 }

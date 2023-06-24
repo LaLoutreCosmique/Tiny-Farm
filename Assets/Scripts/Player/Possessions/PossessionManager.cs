@@ -47,5 +47,10 @@ namespace Player.Possessions
                 _currentPossession.EnterPossession(this, beastmasterObject);
             }
         }
+
+        public void AbilityKeyPressed()
+        {
+            _currentPossession.UseAbility(this);
+        }
     }
 }

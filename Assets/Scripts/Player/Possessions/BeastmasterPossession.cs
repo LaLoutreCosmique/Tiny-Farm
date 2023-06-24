@@ -6,6 +6,7 @@ namespace Player.Possessions
     {
         GameObject _beastmaster;
         Movement _movement;
+        AbilityRoll _ability;
 
         Vector2 _movementInput;
 
@@ -13,8 +14,10 @@ namespace Player.Possessions
         {
             if (this._beastmaster == null)
             {
+                // INITIALIZATION
                 this._beastmaster = beastmaster;
                 _movement = this._beastmaster.GetComponent<Movement>();
+                _ability = _beastmaster.GetComponent<AbilityRoll>();
             }
 
             _movement.enabled = true;
@@ -22,6 +25,7 @@ namespace Player.Possessions
 
         public override void LeavePossession(PossessionManager player)
         {
+            _movement.ResetVelocity();
             _movement.enabled = false;
         }
 
@@ -39,7 +43,8 @@ namespace Player.Possessions
 
         public override void UseAbility(PossessionManager player)
         {
-
+            if (_movementInput.magnitude > 0f)
+                _ability.Perform();
         }
     }
 }

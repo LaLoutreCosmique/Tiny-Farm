@@ -22,6 +22,7 @@ namespace Player.Possessions
 
         public override void LeavePossession(PossessionManager player)
         {
+            _movement.ResetVelocity();
             _movement.enabled = false;
         }
 
