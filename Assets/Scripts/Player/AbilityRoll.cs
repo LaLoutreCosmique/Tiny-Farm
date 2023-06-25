@@ -6,7 +6,7 @@ namespace Player
 {
     public class AbilityRoll : MonoBehaviour
     {
-        Movement _movement;
+        ManualMovement _movement;
         Animator _animator;
         [SerializeField] InputManager inputManager;
 
@@ -18,7 +18,7 @@ namespace Player
 
         void Awake()
         {
-            _movement = GetComponent<Movement>();
+            _movement = GetComponent<ManualMovement>();
             _animator = GetComponent<Animator>();
         }
 

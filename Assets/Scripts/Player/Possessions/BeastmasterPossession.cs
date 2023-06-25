@@ -5,19 +5,21 @@ namespace Player.Possessions
     public class BeastmasterPossession : BasePossession
     {
         GameObject _beastmaster;
-        Movement _movement;
+        GameObject _ally;
+        ManualMovement _movement;
         AbilityRoll _ability;
 
         Vector2 _movementInput;
 
-        public override void EnterPossession(PossessionManager player, GameObject beastmaster)
+        public override void EnterPossession(PossessionManager player, GameObject beastmasterObject, GameObject allyObject = null)
         {
             if (this._beastmaster == null)
             {
                 // INITIALIZATION
-                this._beastmaster = beastmaster;
-                _movement = this._beastmaster.GetComponent<Movement>();
+                this._beastmaster = beastmasterObject;
+                _movement = this._beastmaster.GetComponent<ManualMovement>();
                 _ability = _beastmaster.GetComponent<AbilityRoll>();
+                _ally = allyObject;
             }
 
             _movement.enabled = true;
@@ -36,7 +38,6 @@ namespace Player.Possessions
 
         public override void Move(PossessionManager player, Vector2 movementInput)
         {
-            // from MonoBehaviour's Update method
             this._movementInput = movementInput;
             _movement.ReceiveInput(this._movementInput);
         }

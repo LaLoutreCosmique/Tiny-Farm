@@ -5,23 +5,26 @@ namespace Player.Possessions
     public class FoxPossession : BasePossession
     {
         GameObject _fox;
-        Movement _movement;
+        ManualMovement _movement;
+        Chase _chaseManager;
 
         Vector2 _movementInput;
 
-        public override void EnterPossession(PossessionManager player, GameObject beastmaster)
+        public override void EnterPossession(PossessionManager player, GameObject foxObject, GameObject masterObject = null)
         {
             if (this._fox == null)
             {
-                this._fox = beastmaster;
-                _movement = this._fox.GetComponent<Movement>();
+                this._fox = foxObject;
+                _movement = this._fox.GetComponent<ManualMovement>();
+                _chaseManager = _fox.GetComponent<Chase>();
             }
-        
+            _chaseManager.CancelChase();
             _movement.enabled = true;
         }
 
         public override void LeavePossession(PossessionManager player)
         {
+            _chaseManager.StartChase();
             _movement.ResetVelocity();
             _movement.enabled = false;
         }

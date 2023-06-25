@@ -5,7 +5,7 @@ using Debug = UnityEngine.Debug;
 
 namespace Player
 {
-    public class Movement : MonoBehaviour
+    public class ManualMovement : MonoBehaviour
     {
         public bool activeDebug;
         
@@ -13,9 +13,9 @@ namespace Player
         Animator _animator;
 
         Vector2 _movementInput;
-        
-        [SerializeField]
-        float maxSpeed = 3f, acceleration = 8f, slowdown = 10f;
+
+        public float maxSpeed = 2.5f;
+        [SerializeField] float acceleration = 8f, slowdown = 10f;
 
         float _initialMaxSpeed;
         float _currentSpeed;

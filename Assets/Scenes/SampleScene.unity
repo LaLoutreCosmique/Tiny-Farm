@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 75691665}
   - component: {fileID: 75691661}
   - component: {fileID: 75691666}
+  - component: {fileID: 75691667}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Untagged
@@ -239,7 +240,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -268,6 +269,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &75691667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75691660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158b56c935167fd42a65b67e28231c2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  master: {fileID: 1341356558}
+  maxDistance: 1
 --- !u!1 &96213545
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +883,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -913,8 +928,8 @@ MonoBehaviour:
   rollSpeedMultiplier: 2.3
   rollDuration: 0.4
   cooldown: 0.6
---- !u!61 &1341356565
-BoxCollider2D:
+--- !u!58 &1341356565
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -926,19 +941,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.39331716}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.4951073, y: 0.31861365}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!1 &1444633585
 GameObject:
   m_ObjectHideFlags: 0

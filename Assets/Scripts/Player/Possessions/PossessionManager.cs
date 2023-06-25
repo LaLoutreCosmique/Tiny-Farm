@@ -14,10 +14,11 @@ namespace Player.Possessions
         // Start is called before the first frame update
         void Start()
         {
-            // starting state dor the state machine
+            // Initialization
             _currentPossession = _beastmasterPossession;
-            // "this" is a ref to the ctx (this EXACT MonoBehaviour script)
-            _currentPossession.EnterPossession(this, beastmasterObject);
+            _currentPossession.EnterPossession(this, beastmasterObject, foxObject);
+            // Start following
+            foxObject.GetComponent<Chase>().StartChase();
         }
 
         // Update is called once per frame

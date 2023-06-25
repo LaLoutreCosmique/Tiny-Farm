@@ -10,7 +10,7 @@ namespace Player
         PlayerControls _controls;
         PlayerControls.PlayerActions _playerActions;
 
-        bool controlsLocked;
+        bool _controlsLocked;
         Vector2 _movementInput;
 
         private void Awake()
@@ -27,7 +27,7 @@ namespace Player
 
         private void Update()
         {
-            if (controlsLocked) return;
+            if (_controlsLocked) return;
             
             //Debug.LogWarning(_possessionManager.transform.position);
             _possessionManager.ReceiveMoveInput(_movementInput);
@@ -45,14 +45,14 @@ namespace Player
 
         public void EnableControls()
         {
-            controlsLocked = false;
+            _controlsLocked = false;
             
             _controls.Enable();
         }
         
         public void DisableControls()
         {
-            controlsLocked = true;
+            _controlsLocked = true;
             
             _movementInput.x = 0f;
             _movementInput.y = 0f;

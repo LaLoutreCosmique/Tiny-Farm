@@ -4,7 +4,7 @@ namespace Player.Possessions
 {
     public abstract class BasePossession
     {
-        public abstract void EnterPossession(PossessionManager player, GameObject possessedObject);
+        public abstract void EnterPossession(PossessionManager player, GameObject possessedObject, GameObject allyObject = null);
 
         public abstract void LeavePossession(PossessionManager player);
 
