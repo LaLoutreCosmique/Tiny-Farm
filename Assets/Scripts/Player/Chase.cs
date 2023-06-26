@@ -7,7 +7,7 @@ namespace Player
     {
         Transform _target;
         [SerializeField] GameObject master; // default chased (beastmaster)
-        [SerializeField] float _speed;
+        float _speed;
         [SerializeField] float maxDistance;
         bool _followMaster;
 
@@ -56,7 +56,7 @@ namespace Player
             
             // Move
             _rb2D.velocity = dir * _speed;
-            
+
             // Animation
             _movement.AnimateMovement(dir);
         }

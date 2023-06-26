@@ -7,7 +7,7 @@ namespace Player
 {
     public class ManualMovement : MonoBehaviour
     {
-        public bool activeDebug;
+        public bool debugMode;
         
         Rigidbody2D _rb;
         Animator _animator;
@@ -40,7 +40,7 @@ namespace Player
             _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, maxSpeed);
             _rb.velocity = _movementInput * _currentSpeed;
 
-            if (activeDebug)
+            if (debugMode)
             {
                 Debug.Log(_movementInput);
             }
@@ -54,7 +54,7 @@ namespace Player
 
         public void AnimateMovement(Vector2 movementInput)
         {   
-            if (_animator == null) return;
+            if (_animator is null) return;
 
             if (movementInput.magnitude > 0f)
             {
