@@ -52,7 +52,7 @@ namespace Player
             AnimateMovement(movementInput);
         }
 
-        private void AnimateMovement(Vector2 movementInput)
+        public void AnimateMovement(Vector2 movementInput)
         {   
             if (_animator == null) return;
 
