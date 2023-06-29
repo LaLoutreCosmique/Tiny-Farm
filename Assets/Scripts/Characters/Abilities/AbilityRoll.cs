@@ -1,14 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
+using Characters.Player;
 using UnityEngine;
 
-namespace Player
+namespace Characters.Abilities
 {
     public class AbilityRoll : MonoBehaviour
     {
         ManualMovement _movement;
         Animator _animator;
         [SerializeField] InputManager inputManager;
+        Health _health;
 
         [SerializeField] float rollSpeedMultiplier = 2.3f;
         [SerializeField] float rollDuration = 0.4f;
@@ -20,6 +21,7 @@ namespace Player
         {
             _movement = GetComponent<ManualMovement>();
             _animator = GetComponent<Animator>();
+            _health = GetComponent<Health>();
         }
 
         public void Perform()
@@ -33,6 +35,8 @@ namespace Player
             _onCooldown = true;
 
             StartCoroutine(PerformRoutine());
+            // Invincible
+            _health.EnableInvincibility(rollDuration);
         }
 
         IEnumerator PerformRoutine()

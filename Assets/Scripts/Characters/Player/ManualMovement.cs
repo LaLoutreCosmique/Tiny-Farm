@@ -1,9 +1,7 @@
-using System;
-using System.Diagnostics;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
-namespace Player
+namespace Characters.Player
 {
     public class ManualMovement : MonoBehaviour
     {
@@ -14,6 +12,7 @@ namespace Player
 
         Vector2 _movementInput;
 
+        public bool locked;
         public float maxSpeed = 2.5f;
         [SerializeField] float acceleration = 8f, slowdown = 10f;
 
@@ -38,7 +37,7 @@ namespace Player
                 _currentSpeed -= slowdown * maxSpeed * Time.deltaTime;
 
             _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, maxSpeed);
-            _rb.velocity = _movementInput * _currentSpeed;
+            _rb.AddForce(_movementInput * _currentSpeed);
 
             if (debugMode)
             {
@@ -48,6 +47,12 @@ namespace Player
 
         public void ReceiveInput(Vector2 movementInput)
         {
+            if (locked)
+            {
+                _movementInput = new Vector2();
+                return;
+            }
+
             _movementInput = movementInput;
             AnimateMovement(movementInput);
         }

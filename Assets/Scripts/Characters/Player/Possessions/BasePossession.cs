@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Player.Possessions
+namespace Characters.Player.Possessions
 {
     public abstract class BasePossession
     {

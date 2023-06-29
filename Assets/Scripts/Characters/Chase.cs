@@ -1,7 +1,7 @@
-using System.Collections;
+using Characters.Player;
 using UnityEngine;
 
-namespace Player
+namespace Characters
 {
     public class Chase : MonoBehaviour
     {
@@ -55,7 +55,8 @@ namespace Player
             }
             
             // Move
-            _rb2D.velocity = dir * _speed;
+            if (_speed > 0f)
+                _rb2D.AddForce(dir * _speed );
 
             // Animation
             _movement.AnimateMovement(dir);

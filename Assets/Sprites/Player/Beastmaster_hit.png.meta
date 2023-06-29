@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dde9b615d16492f48892c53c5fd87717
+guid: 272eb3a6232301f43802ecfa3ab3af4b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,11 +117,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fox_walk_0
+      name: Beastmaster_hit_0
       rect:
         serializedVersion: 2
         x: 32
-        y: 318
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ee800dd05dd3f6439e62c98ffdef7cc
-      internalID: -103478787
+      spriteID: 082d2e515307150418393c680e6acd7b
+      internalID: 1007452048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fox_walk_1
+      name: Beastmaster_hit_1
       rect:
         serializedVersion: 2
         x: 128
@@ -152,56 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56d14becf002cdc44bcec44d141adf22
-      internalID: -1974968133
+      spriteID: d323268b47ab0854aba248f8a187f3a2
+      internalID: -426271219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fox_walk_2
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 318
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 18f62281046b70543b670ecdb359259e
-      internalID: 1635775785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fox_walk_3
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 320
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 50ab8dd2a6835d0498821d88cc0879c5
-      internalID: -1685428318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fox_walk_6
+      name: Beastmaster_hit_2
       rect:
         serializedVersion: 2
         x: 32
@@ -215,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62a95e5ab675efd4191069ed14a89985
-      internalID: 1983493329
+      spriteID: 756e779e310c5014a8ad46e8e134c234
+      internalID: 31720180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fox_walk_7
+      name: Beastmaster_hit_3
       rect:
         serializedVersion: 2
         x: 128
@@ -236,56 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74d1566f1072fd54cb6068575e85ec85
-      internalID: -34316301
+      spriteID: 2eb01cf75b11c7d4d9cb648c1415ce37
+      internalID: 346989383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fox_walk_8
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6013180debeb614eb5f9d15105133ab
-      internalID: -1708925099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fox_walk_9
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bbd1c8af6c6fa4b43a1422fb2fae2f1e
-      internalID: 974073596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fox_walk_10
+      name: Beastmaster_hit_4
       rect:
         serializedVersion: 2
         x: 32
@@ -299,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abdd8592b5fcdb048ae9eac3ee94a071
-      internalID: 1048743031
+      spriteID: 179534fd1574693418f31c2d2c377518
+      internalID: 2139104923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fox_walk_11
+      name: Beastmaster_hit_5
       rect:
         serializedVersion: 2
         x: 128
@@ -320,60 +236,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ec25d95534a1f34e910507fba964154
-      internalID: -1468340103
+      spriteID: 88a84530d135c6849ae7cf5f1cf24bce
+      internalID: 1442135993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fox_walk_12
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6d48e150c34149439d2fed80887ea04
-      internalID: 1522018158
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fox_walk_13
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 230ffdb29f62ad143979d77ee5d27af3
-      internalID: 747344042
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fox_walk_14
+      name: Beastmaster_hit_8
       rect:
         serializedVersion: 2
         x: 32
-        y: 30
+        y: 34
         width: 32
         height: 32
       alignment: 0
@@ -383,18 +257,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60714aa994175dd4c9b65ffcbea506c1
-      internalID: 1946260720
+      spriteID: d4f64418b0ca1ec4083eca0160bf6670
+      internalID: -2145058764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fox_walk_15
+      name: Beastmaster_hit_9
       rect:
         serializedVersion: 2
         x: 128
-        y: 30
+        y: 34
         width: 32
         height: 32
       alignment: 0
@@ -404,50 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e821d6174cf3e9740a19fa22a01366f1
-      internalID: -1866947864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fox_walk_16
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 30
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3651fdf288b5014baec03e038cd0084
-      internalID: -1565799735
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fox_walk_17
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 30
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b08add2908b8e644980aa31374159df9
-      internalID: 397180037
+      spriteID: 292b61fa68a9c044692719bf17e38915
+      internalID: -1775085805
       vertices: []
       indices: 
       edges: []
@@ -463,28 +295,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fox_walk_0: -103478787
-      Fox_walk_1: -1974968133
-      Fox_walk_10: 1048743031
-      Fox_walk_11: -1468340103
-      Fox_walk_12: 1522018158
-      Fox_walk_13: 747344042
-      Fox_walk_14: 1946260720
-      Fox_walk_15: -1866947864
-      Fox_walk_16: -1565799735
-      Fox_walk_17: 397180037
-      Fox_walk_18: 1954271544
-      Fox_walk_19: -691419068
-      Fox_walk_2: 1635775785
-      Fox_walk_20: 1069247115
-      Fox_walk_21: -2138517361
-      Fox_walk_3: -1685428318
-      Fox_walk_4: -639278091
-      Fox_walk_5: 391236167
-      Fox_walk_6: 1983493329
-      Fox_walk_7: -34316301
-      Fox_walk_8: -1708925099
-      Fox_walk_9: 974073596
+      Beastmaster_hit_0: 1007452048
+      Beastmaster_hit_1: -426271219
+      Beastmaster_hit_2: 31720180
+      Beastmaster_hit_3: 346989383
+      Beastmaster_hit_4: 2139104923
+      Beastmaster_hit_5: 1442135993
+      Beastmaster_hit_6: -779651429
+      Beastmaster_hit_7: -1506286671
+      Beastmaster_hit_8: -2145058764
+      Beastmaster_hit_9: -1775085805
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

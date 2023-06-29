@@ -1,7 +1,7 @@
-using Player.Possessions;
+using Characters.Player.Possessions;
 using UnityEngine;
 
-namespace Player
+namespace Characters.Player
 {
     public class InputManager : MonoBehaviour
     {

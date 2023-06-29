@@ -1,6 +1,7 @@
+using Characters.Abilities;
 using UnityEngine;
 
-namespace Player.Possessions
+namespace Characters.Player.Possessions
 {
     public class BeastmasterPossession : BasePossession
     {
