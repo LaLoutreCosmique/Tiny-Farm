@@ -10,23 +10,21 @@ namespace Characters
         Rigidbody2D _rb2d;
         Animator _animator;
         ManualMovement _movement;
+        Chase _chase;
 
         [SerializeField] int maxHealth = 10;
         [SerializeField] int currentHealth;
         [SerializeField] float invincibleDuration = 2f;
         bool _isInvincible;
 
-        bool _asPlayer;
-
         void Start()
         {
             currentHealth = maxHealth;
 
-            if (CompareTag("Player"))
-            {
+            if (CompareTag("Player") || CompareTag("Ally"))
                 _movement = GetComponent<ManualMovement>();
-                _asPlayer = true;
-            }
+            if (CompareTag("Ally") || CompareTag("Enemy"))
+                _chase = GetComponent<Chase>(); // Ally & Enemy have the Chase component
 
             _rb2d = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
@@ -56,9 +54,12 @@ namespace Characters
             // Death
             if (IsDead())
             {
-                _animator.SetTrigger("Death");
+                _animator.SetBool("isDead", true);
                 EnableInvincibility(Mathf.Infinity);
-                if (_asPlayer) _movement.locked = true;
+                if (CompareTag("Player") || CompareTag("Ally"))
+                    _movement.locked = true;
+                if (CompareTag("Ally") || CompareTag("Enemy"))
+                    _chase.locked = true;
             }
 
             EnableInvincibility(invincibleDuration);
@@ -70,13 +71,11 @@ namespace Characters
             StartCoroutine(InvincibleRoutine(duration));
         }
 
-        public IEnumerator InvincibleRoutine(float duration)
+        IEnumerator InvincibleRoutine(float duration)
         {
             _isInvincible = true;
-            Debug.Log(_isInvincible);
             yield return new WaitForSeconds(duration);
             _isInvincible = false;
-            Debug.Log(_isInvincible);
         }
 
         bool IsDead()

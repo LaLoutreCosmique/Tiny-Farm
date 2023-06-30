@@ -10,6 +10,7 @@ namespace Characters
         float _speed;
         [SerializeField] float maxDistance;
         bool _followMaster;
+        public bool locked;
 
         Rigidbody2D _rb2D;
         ManualMovement _movement;
@@ -25,7 +26,7 @@ namespace Characters
         // Update is called once per frame
         void FixedUpdate()
         {
-            if (_target is null) return;
+            if (_target is null || locked) return;
 
             // Get direction between chaser and chased
             var pos = transform.position;
