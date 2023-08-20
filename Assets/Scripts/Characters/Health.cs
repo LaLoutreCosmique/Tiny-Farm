@@ -1,5 +1,5 @@
-using System;
 using System.Collections;
+using Characters.Enemy;
 using Characters.Player;
 using UnityEngine;
 
@@ -16,12 +16,15 @@ namespace Characters
         [SerializeField] int currentHealth;
         [SerializeField] float invincibleDuration = 2f;
         bool _isInvincible;
+        bool _isPlayer; // Determines type of object (Player/Enemy)
 
         void Start()
         {
+            _isPlayer = CompareTag("Player") || CompareTag("Ally");
+            
             currentHealth = maxHealth;
 
-            if (CompareTag("Player") || CompareTag("Ally"))
+            if (_isPlayer)
                 _movement = GetComponent<ManualMovement>();
             if (CompareTag("Ally") || CompareTag("Enemy"))
                 _chase = GetComponent<Chase>(); // Ally & Enemy have the Chase component
@@ -32,10 +35,32 @@ namespace Characters
 
         void OnCollisionStay2D(Collision2D other)
         {
-            if (!other.gameObject.CompareTag("Enemy")) return;
+            var dmg = 0;
+            var kbForce = 0f;
             
-            Vector2 dir = (transform.position - other.transform.position).normalized;
-            Hurt(5, 30f, dir);
+            if (_isPlayer) // PLAYER GET DAMAGES 
+            {
+                if (!other.gameObject.CompareTag("Enemy")) return;
+                
+                var enemyData = other.gameObject.GetComponent<EnemyDataStorage>().data;
+                dmg = enemyData.Damage;
+                kbForce = enemyData.Knockback;
+                    
+                Vector2 kbDir = (transform.position - other.transform.position).normalized;
+                Hurt(dmg, kbForce, kbDir);
+            }
+
+            else // ENEMY GET DAMAGES
+            {
+                if (!other.gameObject.CompareTag("PlayerAttack")) return;
+                
+                // GET DATA FROM PLAYER ATTACK SCRIPT
+                dmg = 1;
+                kbForce = 10f;
+                    
+                Vector2 kbDir = (transform.position - other.transform.position).normalized;
+                Hurt(dmg, kbForce, kbDir);
+            }
         }
 
         void Hurt(int damage, float kbForce = 0f, Vector2 kbDir = new Vector2())
@@ -56,9 +81,9 @@ namespace Characters
             {
                 _animator.SetBool("isDead", true);
                 EnableInvincibility(Mathf.Infinity);
-                if (CompareTag("Player") || CompareTag("Ally"))
+                if (_isPlayer)
                     _movement.locked = true;
-                if (CompareTag("Ally") || CompareTag("Enemy"))
+                if (CompareTag("Ally"))
                     _chase.locked = true;
             }
 
